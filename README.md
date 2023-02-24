@@ -1,2 +1,3 @@
 # ALFAMI
-ALFAMI inventory tool
+ALFAMI inventory tool.
+Private repo for development.
