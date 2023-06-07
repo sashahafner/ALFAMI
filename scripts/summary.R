@@ -5,6 +5,8 @@ dat.out <- cbind(dat.in, emis[, c('e', 'er')])
 # Final values
 dat.final <- dat.out[time.hr == max(time.hr), ]
 
+dat.final <- dat.final[order(input.row.app), ]
+
 # Total NH3 emission
 dat.final[, emis.n := app.tan * er]
 

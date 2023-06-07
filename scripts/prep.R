@@ -22,9 +22,9 @@ dat.in[, app.key.year := paste(app.key, app.year)]
 dat.in <- merge(dat.in, comp, by = 'man.key')
 
 # Calculate some more variables
-# If app.tot is missing, get it from app.tan
-dat.in[, app.tot := as.numeric(app.tot)]
-dat.in[is.na(app.tot), app.tot := app.tan / man.tan * 1000]
+# If app.man is missing, get it from app.tan
+dat.in[, app.man := as.numeric(app.man)]
+dat.in[is.na(app.man), app.man := app.tan / man.tan * 1000]
 # If app.rate is missing, get from defaults
 dat.in[, app.rate := as.numeric(app.rate)]
 dat.in[is.na(app.rate), app.rate := as.numeric(defaults['app.rate'])]
