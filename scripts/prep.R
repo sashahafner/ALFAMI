@@ -27,7 +27,7 @@ dat.in <- merge(dat.in, comp, by = 'man.key')
 # Calculate some more variables
 # If app.man is missing, get it from app.tan
 dat.in$app.man <- as.numeric(dat.in$app.man)
-dat.in[is.na(dat.in$app.man), 'app.man'] <- dat.in$app.tan / dat.in$man.tan * 1000 [is.na(dat.in$app.man)]
+dat.in[is.na(dat.in$app.man), 'app.man'] <- (dat.in$app.tan / dat.in$man.tan * 1000)[is.na(dat.in$app.man)]
 # If app.rate is missing, get from defaults
 dat.in[is.na(dat.in$app.rate), 'app.rate'] <- as.numeric(defaults['app.rate'])
 dat.in$app.rate.ni <- as.numeric(dat.in$app.rate) * (dat.in$app.mthd != 'Open slot injection')
@@ -37,7 +37,7 @@ dat.in$tan.rate <- dat.in$man.tan * dat.in$app.rate
 dat.in$air.temp.ave <- dat.in$air.temp
 
 # Incorp
-dat.in[is.na(dat.in$incorp), 'incorp'] <- 'none'
+dat.in[is.na(dat.in$incorp), 'incorp'] <- 'None'
 
 ## Time
 ##dat.in[, date.time := as.POSIXct(paste(date, '09:00'))]

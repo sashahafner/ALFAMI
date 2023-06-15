@@ -7,9 +7,20 @@ if (!dir.exists(od)) {
   dir.create(od)
 }
 
-fwrite(dat.final, '../output/emis_final.csv')
-fwrite(dat.out, '../output/emis_dynamics.csv')
+# Rounding
+dat.final <- rounddf(dat.final, func = signif, digits = settings[['ndig']])
+dat.out <- rounddf(dat.out, func = signif, digits = settings[['ndig']])
+summ.year <- rounddf(summ.year, func = signif, digits = settings[['ndig']])
+summ.loc.year <- rounddf(summ.loc.year, func = signif, digits = settings[['ndig']])
+summ.agg1.year <- rounddf(summ.agg1.year, func = signif, digits = settings[['ndig']])
 
-fwrite(summ.year, '../output/total_year.csv')
-fwrite(summ.loc.year, '../output/total_loc_year.csv')
-fwrite(summ.agg1.year, '../output/total_agg_year.csv')
+# CSV files
+write.csv(dat.final, paste0(od, '/emis_final.csv'), row.names = FALSE)
+write.csv(dat.out, paste0(od, '/emis_final.csv'), row.names = FALSE)
+write.csv(summ.year, paste0(od, '/emis_final.csv'), row.names = FALSE)
+write.csv(summ.loc.year, paste0(od, '/emis_final.csv'), row.names = FALSE)
+write.csv(summ.agg1.year, paste0(od, '/emis_final.csv'), row.names = FALSE)
+
+# Single xlsx file
+write.xlsx(list(Final = dat.final, Out = dat.out, Year = summ.year, `Year location` = summ.loc.year, Aggregated = summ.agg1.year),
+           paste0(od, '/', settings$ofile, '.xlsx'), overwrite = settings$overwrite == 'Yes')

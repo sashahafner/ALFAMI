@@ -7,6 +7,7 @@ loc.names <- as.character(na.omit(unlist(col.names[2, ], use.names = FALSE)))
 comp.names <- as.character(na.omit(unlist(col.names[5, ], use.names = FALSE)))
 app.names <- as.character(na.omit(unlist(col.names[8, ], use.names = FALSE)))
 defaults.names <- as.character(na.omit(unlist(col.names[10:13, 2], use.names = FALSE)))
+settings.names <- as.character(na.omit(unlist(col.names[15:24, 2], use.names = FALSE)))
 
 # Load, drop stupid blank columns, and name columns
 locations <- read.xlsx('../inputs/inputs.xlsx', 'Locations', startRow = 1)
@@ -52,13 +53,14 @@ for (i in wf) {
 # Parameters
 settings <- read.xlsx('../inputs/inputs.xlsx', 'Settings', startRow = 1)
 settings <- as.list(unlist(settings[, 2]))
-names(settings) <- c('decsep', 'uncertain', 'parset', 'nu', 'seedu', 'paruncertain', 'cl')
+names(settings) <- settings.names
 settings[['nu']] <- as.integer(settings[['nu']])
 settings[['seedu']] <- as.numeric(settings[['seedu']])
 settings[['cl']] <- as.numeric(settings[['cl']])
+settings[['ndig']] <- as.numeric(settings[['ndig']])
 
 # Uncertainty
-if (settings[['uncertain']] == 'Yes') {
+if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   uncert <- read.xlsx('../inputs/inputs.xlsx', 'Uncertainty', startRow = 1)
   uncert <- as.matrix(uncert)[, c(-1:-2, -7)]
   rownames(uncert) <- c('man.dm', 'man.ph', 'app.rate.ni', 'app.tan', 'incorp.time', 'air.temp', 'wind.2m')
