@@ -12,5 +12,3 @@ source('run_ALFAM2.R')
 source('uncert.R')
 source('summary.R')
 source('export.R')
-
-print(summ.year)

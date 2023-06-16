@@ -1,13 +1,22 @@
 # Check for input problems
 
-# First echo some info
-message('\n')
-message(paste('Running ALFAMI tool v0.1 with', length(unique(dat.in$app.key.year)), 'unique applications\nover', length(unique(dat.in$app.year)), 'years.')) 
-message('Par set...')
-message('Uncertainty...')
-message('Other messages. . . copied to log file')
-message('\n')
+logfn <- paste0('../', dirs$logs, '/', settings$ofile, '.txt')
 
+# Basic info
+logmssg('Running ALFAMI tool v0.1\n')
+
+logmssg(paste('Calculating emission for', length(unique(dat.in$app.key.year)), 'unique application events over', length(unique(dat.in$app.year)), 'years.\n'),
+        logfile = logfn)
+
+# Check for problems
 if (any(duplicated(dat.in$app.key.year))) {
-  stop('Duplicated application key x year combinations in application data.')
+  mssg <- 'Duplicated application key x year combinations in application data.' 
+  logmssg(mssg)
+  stop(mssg)
+}
+
+if (any(!app$loc.key %in% locations$loc.key)) {
+  mssg <- 'Location key given in application sheet missing in location sheet.' 
+  logmssg(mssg)
+  stop(mssg)
 }
