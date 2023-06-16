@@ -12,7 +12,11 @@ dat.final$emis.n <- dat.final$app.tan * dat.final$er
 # Total. . .
 summ.year <- aggregate2(dat.final, c('app.tan', 'emis.n'), by = 'app.year', FUN = list(min = min, max = max, tot = sum, n = length))
 summ.year$ef <- summ.year$emis.n.tot / summ.year$app.tan.tot
+# Add in uncertainty results
 summ.year <- merge(summ.year, summ.uc, by = 'app.year')
+# Get relative uncertainty
+summ.year$rlwr <- (summ.year$emis.n.tot - summ.year$emis.n.lwr) / summ.year$emis.n.tot
+summ.year$rupr <- (summ.year$emis.n.upr - summ.year$emis.n.tot) / summ.year$emis.n.tot
 
 # By location and year
 summ.loc.year <- aggregate2(dat.final, c('app.tan', 'emis.n'), by = c('loc.key', 'app.year'), FUN = list(min = min, max = max, tot = sum))

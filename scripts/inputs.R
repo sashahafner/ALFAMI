@@ -3,11 +3,16 @@
 # Get var names
 col.names <- read.xlsx('../inputs/inputs.xlsx', 'Names', startRow = 1)
 col.names[col.names == ''] <- NA
+loc.onames <- as.character(na.omit(unlist(col.names[1, ], use.names = FALSE)))
 loc.names <- as.character(na.omit(unlist(col.names[2, ], use.names = FALSE)))
+comp.onames <- as.character(na.omit(unlist(col.names[4, ], use.names = FALSE)))
 comp.names <- as.character(na.omit(unlist(col.names[5, ], use.names = FALSE)))
+app.onames <- as.character(na.omit(unlist(col.names[7, ], use.names = FALSE)))
 app.names <- as.character(na.omit(unlist(col.names[8, ], use.names = FALSE)))
+defaults.onames <- as.character(na.omit(unlist(col.names[10:13, 1], use.names = FALSE)))
 defaults.names <- as.character(na.omit(unlist(col.names[10:13, 2], use.names = FALSE)))
-settings.names <- as.character(na.omit(unlist(col.names[15:24, 2], use.names = FALSE)))
+settings.onames <- as.character(na.omit(unlist(col.names[15:25, 2], use.names = FALSE)))
+settings.names <- as.character(na.omit(unlist(col.names[15:25, 2], use.names = FALSE)))
 
 # Load, drop stupid blank columns, and name columns
 locations <- read.xlsx('../inputs/inputs.xlsx', 'Locations', startRow = 1)
@@ -31,7 +36,10 @@ app <- app[!is.na(app$app.key), ]
 
 # NTS: figure out class of elements or convert to vector instead
 defaults <- read.xlsx('../inputs/inputs.xlsx', 'Defaults', startRow = 1)
+dd <- as.list(unlist(defaults[, 4]))
 defaults <- as.list(unlist(defaults[, 3]))
+# Overwrite ALFAMI defaults with user defaults
+defaults[is.na(defaults)] <- dd[is.na(defaults)] 
 names(defaults) <- defaults.names
 
 # Directories
@@ -39,16 +47,6 @@ dirs <- read.xlsx('../inputs/inputs.xlsx', 'Directories', startRow = 1)
 nn <- tolower(as.list(unlist(dirs[, 1])))
 dirs <- as.list(unlist(dirs[, 2]))
 names(dirs) <- nn
-
-# Weather
-wd <- paste0('../', dirs['weather'])
-wf <- list.files(wd)
-wthr <- data.frame()
-for (i in wf) {
-  d <- read.csv(paste0(wd, '/', i))
-  d$wthr.file <- i
-  wthr <- rbind(wthr, d)
-}
 
 # Parameters
 settings <- read.xlsx('../inputs/inputs.xlsx', 'Settings', startRow = 1)
@@ -79,4 +77,19 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   uncert <- u
   uncert.var <- vn
   uncert.type <- tn
+}
+
+# Units
+unitz <- read.xlsx('../inputs/inputs.xlsx', 'Units', startRow = 1)
+unitz <- unitz[1:2, 1:2]
+unitz$Variable <- c('Slurry application', 'TAN application, NH3-N emission')
+
+# Weather
+wd <- paste0('../', dirs['weather'])
+wf <- list.files(wd)
+wthr <- data.frame()
+for (i in wf) {
+  d <- read.csv(paste0(wd, '/', i))
+  d$wthr.file <- i
+  wthr <- rbind(wthr, d)
 }

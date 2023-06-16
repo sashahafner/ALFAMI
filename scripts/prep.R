@@ -4,7 +4,7 @@
 mergecols <- c('loc.key', 'wthr.year')
 morecols <- c('wthr.month', 'wthr.day') 
 mergecols <- c(mergecols, morecols[morecols %in% names(wthr)])
-dat.in <- merge(app, wthr, by = mergecols, allow.cartesian = TRUE)
+dat.in <- merge(app, wthr, by = mergecols)
 
 # Merge in location info (for aggregation)
 dat.in <- merge(dat.in, locations, by = 'loc.key')
