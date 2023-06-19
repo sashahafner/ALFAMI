@@ -57,8 +57,15 @@ If it doesn't work (check the messages for errors), users will have to open R (l
 
 ```
 install.packages('devtools')
-devtools::install_github('sashahafner/ALFAM2', ref = 'dev')
 install.packages('openxlsx')
+devtools::install_github('sashahafner/ALFAM2', ref = 'dev')
+```
+
+If even that does not work because of some problem with ALFAM2, you might have to try to install an older version. 
+You can do that with this command in R:
+
+```
+devtools::install_github('sashahafner/ALFAM2@v2.0')
 ```
 
 ## Download ALFAMI files
@@ -67,7 +74,11 @@ Click the green "Code" button to the right and then select "Download ZIP".
 Once the compressed file has downloaded, extract the contents to a logical place that you can find again.
 
 # Using ALFAMI
+To use ALFAMI:
 
+1. Enter input data in the blank template file `inputs/inputs.xlsx`. See `inputs/example_inputs.xlsx` for an example.
+2. Run the batch file `run_ALFAMI.bat` (Windows) or `run_ALFAMI.sh` (Mac OS or Linux).
+3. Check the output and logs directories for results.
 
 
 
