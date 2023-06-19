@@ -31,10 +31,10 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   
     # Randomly select parameter values if this source of uncertainty is requested
     if (settings[['paruncert']] == 'Yes') {
-      ip <- sample(1:nrow(ALFAM2::alfam2pars03var), 1)
-      parsuc <- ALFAM2::alfam2pars03var[ip, ]
+      ip <- sample(1:nrow(parsvar), 1)
+      parsuc <- parsvar[ip, ]
     } else {
-      parsuc <- ALFAM2::alfam2pars03
+      parsuc <- pars
     }
 
     # Calculate emission
