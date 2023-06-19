@@ -1,5 +1,5 @@
 REM: batch file for ALFAMI
 
 cd scripts
-  Rscript main.R
+  Rscript.exe main.R
 cd..
