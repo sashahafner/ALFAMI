@@ -20,3 +20,6 @@ if (any(!app$loc.key %in% locations$loc.key)) {
   logmssg(mssg)
   stop(mssg)
 }
+
+
+logmssg(paste0('Using following parameter set: ', settings$parset, '\n')) 

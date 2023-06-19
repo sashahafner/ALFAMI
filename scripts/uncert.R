@@ -2,6 +2,8 @@
 
 if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
 
+  logmssg('Starting uncertainty calculations. . .')
+
   ns <- nrow(dat.in)
   nu <- settings[['nu']]
   cl <- settings[['cl']]
@@ -12,7 +14,7 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   
   i <- 1
   for (i in 1:nu) {
-  
+
     # Create data with uncertainty in inputs
     dat.uc <- dat.in
     if (settings[['uncert']] == 'Yes' & any(uncert > 0)) {
@@ -51,6 +53,8 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   upr <- aggregate(dat.tot[, 'emis.n', drop = FALSE], dat.tot[, 'app.year', drop = FALSE], quantile, c(0.5 + cl / 2))
   summ.uc <- merge(lwr, upr, by = 'app.year')
   names(summ.uc)[2:3] <- c('emis.n.lwr', 'emis.n.upr')
+
+  logmssg('Done\n')
 
 } else {
   summ.uc <- data.frame(app.year = sort(unique(dat.in$app.year)), emis.n.lwr = NA, emis.n.upr = NA)

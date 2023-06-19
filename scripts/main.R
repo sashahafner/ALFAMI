@@ -2,6 +2,7 @@
 
 rm(list = ls())
 
+source('start_timer.R')
 source('packages.R')
 source('functions.R')
 source('inputs.R')
@@ -12,3 +13,4 @@ source('run_ALFAM2.R')
 source('uncert.R')
 source('summary.R')
 source('export.R')
+source('end_timer.R')

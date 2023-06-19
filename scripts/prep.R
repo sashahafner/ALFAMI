@@ -36,9 +36,5 @@ dat.in$tan.rate <- dat.in$man.tan * dat.in$app.rate
 # Average temperature
 dat.in$air.temp.ave <- dat.in$air.temp
 
-# Incorp
+# Incorp none to avoid warning
 dat.in[is.na(dat.in$incorp), 'incorp'] <- 'None'
-
-## Time
-##dat.in[, date.time := as.POSIXct(paste(date, '09:00'))]
-#dat.in[, ct := as.numeric(difftime(date.time, min(date.time), units = 'hours')) + 24, by = .(app.key, app.year)]
