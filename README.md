@@ -76,7 +76,7 @@ Once the compressed file has downloaded, extract the contents to a logical place
 # Using ALFAMI
 To use ALFAMI:
 
-1. Enter input data in the blank template file `inputs/inputs.xlsx`. See `inputs/example_inputs.xlsx` for an example.
+1. Save a copy of the blank template file `inputs_template.xlsx` named `inputs.xlsx` and enter input data. See `inputs/example_inputs.xlsx` for an example.
 2. Run the batch file `run_ALFAMI.bat` (Windows) or `run_ALFAMI.sh` (Mac OS or Linux).
 3. Check the output and logs directories for results.
 
