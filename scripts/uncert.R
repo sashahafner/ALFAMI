@@ -11,7 +11,7 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   
   set.seed(settings[['seedu']])
   
-  logmssg(paste0('Starting ', nu, ' uncertainty iterations . .'))
+  logmssg(paste0('Starting ', nu, ' uncertainty iterations . . .'))
 
   for (i in 1:nu) {
 
