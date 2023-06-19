@@ -1,5 +1,5 @@
 # Run ALFAMI tool
 
 cd scripts
-Rscript main.R
+  Rscript main.R
 cd ..
