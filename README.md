@@ -28,14 +28,14 @@ To run ALFAMI from a batch file in Windows, you will need to add the path to the
 To do that, first find and copy the path to Rscript.exe (look wherever you expect R to have been installed), and then follow the steps below.
 
 1. Hit the Windows key and type environment. Select this option:
-![image](https://github.com/sashahafner/ALFAMI/assets/35272876/9444fc5a-364f-42c0-adcc-f34ba1f55baf)
-2. Under the "Advanced" tab select "Environment variables" from the lower left:
-![image](https://github.com/sashahafner/ALFAMI/assets/35272876/7184b77d-fe93-49c8-9971-68b1d9b1a9db)
-3. Click "Path" and then "Edit":
-![image](https://github.com/sashahafner/ALFAMI/assets/35272876/d7777b0e-f31c-463b-b682-88f7af1c80ce)
-4. Select "New", then paste the path to Rscript.exe in the appropriate field:
-![image](https://github.com/sashahafner/ALFAMI/assets/35272876/020a3270-eb74-466a-a1ac-a10658c34136)
-5. Click OK, OK, OK.
+![image](https://github.com/sashahafner/ALFAMI/assets/35272876/684cbc8e-e437-48ff-bd78-a1ac941667d1)
+3. Under the "Advanced" tab select "Environment variables" from the lower right  :
+![image](https://github.com/sashahafner/ALFAMI/assets/35272876/9a29aba1-c083-4ba8-9ffe-baa17b794d54)
+4. Click "Path" and then "Edit":
+![image](https://github.com/sashahafner/ALFAMI/assets/35272876/592219fc-aa4b-4958-b2fc-c8032f6bd31b)
+5. Select "New", then paste the path to Rscript.exe in the appropriate field:
+![image](https://github.com/sashahafner/ALFAMI/assets/35272876/6bbbba7b-11eb-437f-adf1-f47a26febfac)
+6. Click OK, OK, OK.
 
 
 
