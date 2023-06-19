@@ -2,7 +2,6 @@
 
 if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
 
-  logmssg('Starting uncertainty calculations. . .')
 
   ns <- nrow(dat.in)
   nu <- settings[['nu']]
@@ -12,7 +11,8 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   
   set.seed(settings[['seedu']])
   
-  i <- 1
+  logmssg(paste0('Starting ', nu, ' uncertainty iterations . .'))
+
   for (i in 1:nu) {
 
     # Create data with uncertainty in inputs
