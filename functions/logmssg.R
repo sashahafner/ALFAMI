@@ -1,12 +1,13 @@
 
-logmssg <- function(..., logfile = '../logs/log.txt', sep = '\n', append = TRUE, echo = TRUE) {
+logmssg <- function(mssg, logfile = '../logs/log.txt', sep = '\n', append = TRUE, echo = TRUE, print.method = cat) {
 
-  mssg <- paste('\n', as.vector(...), collapse = sep)
   if (echo) {
-    cat(mssg)
+    print.method(mssg)
+	cat('\n')
   }
   sink(logfile, append = append)
-    cat(mssg)
+    print.method(mssg)
+	cat('\n')
   sink()
 
 }

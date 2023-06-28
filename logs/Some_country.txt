@@ -1,40 +1,47 @@
+================================================================
+Running ALFAMI tool v0.2
+================================================================
+See https://github.com/sashahafner/ALFAMI for latest version
 
- Running ALFAMI tool v0.2
+2023-06-28 09:49:38
+System info:
 
- 2023-06-28 09:09:58
- 
+[1] "sysname: Windows"          "release: 10 x64"          
+[3] "version: build 19044"      "nodename: DESKTOP-09DJRQT"
+[5] "machine: x86-64"           "login: sasha"             
+[7] "user: sasha"               "effective_user: sasha"    
 
- System info:
+R version info:
 
- sysname: Linux
+R version 4.1.2 (2021-11-01)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19044)
 
- release: 5.15.0-75-generic
+Matrix products: default
 
- version: #82-Ubuntu SMP Tue Jun 6 23:10:23 UTC 2023
+locale:
+[1] LC_COLLATE=English_United States.1252 
+[2] LC_CTYPE=English_United States.1252   
+[3] LC_MONETARY=English_United States.1252
+[4] LC_NUMERIC=C                          
+[5] LC_TIME=English_United States.1252    
 
- nodename: sasha-OptiPlex-3010
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
 
- machine: x86_64
+other attached packages:
+[1] openxlsx_4.2.5.1 ALFAM2_3.6      
 
- login: sasha
+loaded via a namespace (and not attached):
+[1] compiler_4.1.2 tools_4.1.2    parallel_4.1.2 Rcpp_1.0.10    stringi_1.7.6 
+[6] zip_2.2.0     
 
- user: sasha
+Calculating emission for 12 unique application events over 3 years.
 
- effective_user: sasha
- 
+Using following parameter set: ALFAM2pars03
 
- Calculating emission for 12 unique application events over 3 years.
+Starting 100 uncertainty iterations . . .
+Done
 
- Using following parameter set: ALFAM2pars02
-
- Parameter uncertainty is only available for ALFAM2pars03, so skipping it.
- 
-
- Starting 100 uncertainty iterations . . .
- Done
-
- Time: 1.8 seconds.
- 
-
- See files in output directory for output, and logs directory for logs.
- 
+Total time: 2.22 seconds.
+See files in output directory for output, and logs directory for logs.

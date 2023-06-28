@@ -3,16 +3,26 @@
 logfn <- paste0('../', dirs$logs, '/', settings$ofile, '.txt')
 
 # Basic info
-logmssg('Running ALFAMI tool v0.2\n', logfile = logfn, append = FALSE)
+logmssg('================================================================', logfile = logfn, append = FALSE)
+logmssg('Running ALFAMI tool v0.2', logfile = logfn)
+logmssg('================================================================', logfile = logfn)
+
+logmssg('See https://github.com/sashahafner/ALFAMI for latest version\n', logfile = logfn)
 
 logmssg(as.character(Sys.time()), logfile = logfn)
-logmssg('\n', logfile = logfn)
 
-logmssg('System info:\n', logfile = logfn)
+logmssg('System info:\n', logfile = logfn, echo = FALSE)
 si <- Sys.info()
 si <- paste0(names(si), ': ', si)
-logmssg(si, logfile = logfn)
-logmssg('\n', logfile = logfn)
+logmssg(si, logfile = logfn, print.method = print, echo = FALSE)
+
+logmssg('R version info:\n', logfile = logfn, echo = FALSE)
+logmssg(sessionInfo(), logfile = logfn, print.method = print, echo = FALSE)
+
+sink('../logs/R_versions.txt')
+  print(sessionInfo())
+sink()
+
 
 logmssg(paste('Calculating emission for', length(unique(dat.in$app.key.year)), 'unique application events over', length(unique(dat.in$app.year)), 'years.\n'), logfile = logfn)
 
