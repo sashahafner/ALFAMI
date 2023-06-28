@@ -1,6 +1,7 @@
 # Load inputs from single xlsx file
 
 # Get var names
+# onames = output (decriptive) names
 col.names <- read.xlsx('../inputs/inputs.xlsx', 'Names', startRow = 1)
 col.names[col.names == ''] <- NA
 loc.onames <- as.character(na.omit(unlist(col.names[1, ], use.names = FALSE)))
@@ -9,10 +10,12 @@ comp.onames <- as.character(na.omit(unlist(col.names[4, ], use.names = FALSE)))
 comp.names <- as.character(na.omit(unlist(col.names[5, ], use.names = FALSE)))
 app.onames <- as.character(na.omit(unlist(col.names[7, ], use.names = FALSE)))
 app.names <- as.character(na.omit(unlist(col.names[8, ], use.names = FALSE)))
-defaults.onames <- as.character(na.omit(unlist(col.names[10:13, 1], use.names = FALSE)))
-defaults.names <- as.character(na.omit(unlist(col.names[10:13, 2], use.names = FALSE)))
-settings.onames <- as.character(na.omit(unlist(col.names[15:25, 2], use.names = FALSE)))
-settings.names <- as.character(na.omit(unlist(col.names[15:25, 2], use.names = FALSE)))
+defaults.onames <- as.character(na.omit(unlist(col.names[10:15, 1], use.names = FALSE)))
+defaults.names <- as.character(na.omit(unlist(col.names[10:15, 2], use.names = FALSE)))
+settings.onames <- as.character(na.omit(unlist(col.names[17:25, 1], use.names = FALSE)))
+settings.names <- as.character(na.omit(unlist(col.names[17:25, 2], use.names = FALSE)))
+reprod.onames <- as.character(na.omit(unlist(col.names[27:29, 1], use.names = FALSE)))
+reprod.names <- as.character(na.omit(unlist(col.names[27:29, 2], use.names = FALSE)))
 
 # Load, drop stupid blank columns, and name columns
 locations <- read.xlsx('../inputs/inputs.xlsx', 'Locations', startRow = 1)
@@ -48,14 +51,25 @@ nn <- tolower(as.list(unlist(dirs[, 1])))
 dirs <- as.list(unlist(dirs[, 2]))
 names(dirs) <- nn
 
-# Parameters
+# Settings
 settings <- read.xlsx('../inputs/inputs.xlsx', 'Settings', startRow = 1)
 settings <- as.list(unlist(settings[, 2]))
 names(settings) <- settings.names
 settings[['nu']] <- as.integer(settings[['nu']])
-settings[['seedu']] <- as.numeric(settings[['seedu']])
 settings[['cl']] <- as.numeric(settings[['cl']])
 settings[['ndig']] <- as.numeric(settings[['ndig']])
+
+# Reproducibility
+reprod <- read.xlsx('../inputs/inputs.xlsx', 'Reproducibility', startRow = 1)
+reprod <- as.list(unlist(reprod[, 2]))
+names(reprod) <- reprod.names
+reprod[['seedu']] <- as.numeric(reprod[['seedu']])
+reprod[['emis.dur']] <- as.numeric(reprod[['emis.dur']])
+
+# Combine reprod with settings for ease of use
+settings <- c(settings, reprod)
+settings.names <- c(settings.names, reprod.names)
+settings.onames <- c(settings.onames, reprod.onames)
 
 # Uncertainty
 if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {

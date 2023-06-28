@@ -1,2 +1,0 @@
-
- Calculating emission for 12 unique application events over 3 years.

@@ -11,7 +11,7 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   
   set.seed(settings[['seedu']])
   
-  logmssg(paste0('Starting ', nu, ' uncertainty iterations . . .'))
+  logmssg(paste0('Starting ', nu, ' uncertainty iterations . . .'), logfile = logfn)
 
   for (i in 1:nu) {
 
@@ -54,7 +54,7 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   summ.uc <- merge(lwr, upr, by = 'app.year')
   names(summ.uc)[2:3] <- c('emis.n.lwr', 'emis.n.upr')
 
-  logmssg('Done\n')
+  logmssg('Done\n', logfile = logfn)
 
 } else {
   summ.uc <- data.frame(app.year = sort(unique(dat.in$app.year)), emis.n.lwr = NA, emis.n.upr = NA)

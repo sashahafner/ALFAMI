@@ -1,5 +1,5 @@
 
-logmssg <- function(..., logfile = '../logs/log.txt', sep = '\n', append = FALSE, echo = TRUE) {
+logmssg <- function(..., logfile = '../logs/log.txt', sep = '\n', append = TRUE, echo = TRUE) {
 
   mssg <- paste('\n', as.vector(...), collapse = sep)
   if (echo) {

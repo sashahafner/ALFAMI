@@ -15,7 +15,7 @@ dim(dat.in)
 # NTS: warnings etc.
 
 # Add time
-dat.in$emis.dur <- as.numeric(defaults['emis.dur'])
+dat.in$emis.dur <- as.numeric(settings['emis.dur'])
 dat.in$time.hr <- dat.in$emis.dur
 
 # Unique key
