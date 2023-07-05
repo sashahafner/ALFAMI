@@ -1,6 +1,6 @@
 # ALFAMI
 The ALFAMI tool for estimation ammonia volatilization from field-applied animal slurry.
-This tool is under development at present (v0.1), and is expected to undergo some significant changes in the coming months (summer and autumn 2023).
+This tool is under development at present (v0.2), and is expected to undergo some significant changes in the coming months (summer and autumn 2023).
 See below for usage instructions and see releases (to right) for releases.
 
 # Overview
