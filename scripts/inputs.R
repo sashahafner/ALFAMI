@@ -74,23 +74,9 @@ settings.onames <- c(settings.onames, reprod.onames)
 # Uncertainty
 if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   uncert <- read.xlsx('../inputs/inputs.xlsx', 'Uncertainty', startRow = 1)
-  uncert <- as.matrix(uncert)[, c(-1:-2, -7)]
+  uncert <- uncert[, c(-1:-2)]
   rownames(uncert) <- c('man.dm', 'man.ph', 'app.rate.ni', 'app.tan', 'incorp.time', 'air.temp', 'wind.2m')
-  colnames(uncert) <- c('abs', 'rel', 'lwr', 'upr')
-  u <- vn <- tn <- c()
-  for (i in 1:nrow(uncert)) {
-    vn <- c(vn, rep(rownames(uncert)[i], ncol(uncert)))
-    tn <- c(tn, colnames(uncert))
-    u <- c(u, uncert[i, ])
-  }
-
-  vn <- vn[!is.na(u)]
-  tn <- tn[!is.na(u)]
-  u <- as.numeric(u[!is.na(u)])
-
-  uncert <- u
-  uncert.var <- vn
-  uncert.type <- tn
+  colnames(uncert) <- c('rel', 'dist.type', 'sd', 'min', 'max', 'shape')
 }
 
 # Units

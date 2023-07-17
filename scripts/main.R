@@ -14,3 +14,5 @@ source('uncert.R')
 source('summary.R')
 source('export.R')
 source('end_timer.R')
+
+options(warn = 2)

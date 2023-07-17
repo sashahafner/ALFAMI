@@ -73,7 +73,7 @@ if (grepl('CSV2', settings$otype)) {
   write.csv2(unitz, unitz.fn, row.names = FALSE)
 } 
 
-if (grepl('CSV[^2]', settings$otype)) {
+if (grepl('CSV$|CSV ', settings$otype)) {
   write.csv(dat.final, dat.final.fn, row.names = FALSE)
   write.csv(dat.final.named, dat.final.named.fn, row.names = FALSE)
   write.csv(dat.out, dat.out.fn, row.names = FALSE)

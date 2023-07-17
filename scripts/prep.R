@@ -38,3 +38,5 @@ dat.in$air.temp.ave <- dat.in$air.temp
 
 # Incorp none to avoid warning
 dat.in[is.na(dat.in$incorp), 'incorp'] <- 'None'
+# And incorp time Inf to avoid problem in uncert.R
+dat.in[is.na(dat.in$incorp.time), 'incorp.time'] <- Inf

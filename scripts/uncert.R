@@ -9,22 +9,86 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   
   dat.tot <- data.frame()
   
-  set.seed(settings[['seedu']])
-  
   logmssg(paste0('Starting ', nu, ' uncertainty iterations . . .'), logfile = logfn)
+
+  if (!is.na(settings$seedu)) {
+    set.seed(settings$seedu)
+    logmssg(paste0('With random number seed ', settings$seedu, '.'), logfile = logfn)
+  }
 
   for (i in 1:nu) {
 
     # Create data with uncertainty in inputs
     dat.uc <- dat.in
-    if (settings[['uncert']] == 'Yes' & any(uncert > 0)) {
-      for (j in 1:length(uncert)) {
-        v <- uncert.var[j]
-        e <- runif(1, min = -1, max = 1) * uncert[j]
-        if (uncert.type[j] == 'abs') {
-          dat.uc[, v] <- dat.in[, v] + e
-        } else if (uncert.type[j] == 'rel') {
-          dat.uc[, v] <- dat.in[, v] +  dat.in[, v] * e
+    if (settings[['uncert']] == 'Yes' & any(!is.na(uncert[, 3:6])) && any(uncert[, 3:6] > 0)) {
+      # Loop through rows (variables) in uncert data frame
+      for (j in 1:nrow(uncert)) {
+        if (any(!is.na(uncert[j, 3:6]))) {
+          xnm <- rownames(uncert)[j]
+          ii <- is.finite(dat.uc[, xnm])
+          x <- dat.uc[ii, xnm]
+          rel <- uncert$rel[j] == 'Relative'
+          dist.type <- uncert$dist.type[j]
+          s <- uncert$sd[j]
+          mn <- uncert$min[j]
+          mx <- uncert$max[j]
+          shape <- uncert$shape[j]
+          if (dist.type == 'Normal') {
+            e <- rnorm(1, mean = 0, sd = s)
+            if (rel) {
+              dat.uc[ii, xnm] <- x * (1 + e)
+            } else {
+              dat.uc[ii, xnm] <- x +  e
+            }
+          } else if (dist.type == 'Uniform') {
+            e <- runif(1, min = uncert$min[j], max = uncert$max[j])
+            if (rel) {
+              dat.uc[ii, xnm] <- x * (1 + e)
+            } else {
+              dat.uc[ii, xnm] <- e
+            }
+          } else if (dist.type == 'PERT') {
+            if (rel) {
+              if (any(mn > 0 | mx < 0)) {
+                mssg <- 'For relative PERT or triangular distribution, min-max range must include 0 but does not.' 
+                logmssg(mssg, logfile = logfn)
+                stop(mssg)
+              }
+              e <- mc2d::rpert(1, min = mn, mode = 0, max = mx)
+              dat.uc[ii, xnm] <- x * (1 + e)
+            } else {
+              # Check for mode outside range
+              if (any(x > mn | x < mx)) {
+                mssg <- 'For PERT or triangular distribution, given mode is outside min-max range.' 
+                logmssg(mssg, logfile = logfn)
+                stop(mssg)
+              }
+              e <- mc2d::rpert(length(x), min = mn, mode = x, max = mx)
+              dat.uc[ii, xnm] <- e
+            }
+          } else if (dist.type == 'Triangular') {
+            if (rel) {
+              if (any(mn > 0 | mx < 0)) {
+                mssg <- 'For relative PERT or triangular distribution, min-max range must include 0 but does not.' 
+                logmssg(mssg, logfile = logfn)
+                stop(mssg)
+              }
+              e <- mc2d::rtriang(1, min = mn, mode = 0, max = mx)
+              dat.uc[ii, xnm] <- x * (1 + e)
+            } else {
+              if (any(x < mn | x > mx)) {
+                mssg <- 'For PERT or triangular distribution, given mode is outside min-max range.' 
+                logmssg(mssg, logfile = logfn)
+                stop(mssg)
+              }
+              e <- mc2d::rtriang(length(x), min = mn, mode = x, max = mx)
+              dat.uc[ii, xnm] <- e
+            }
+          } else {
+            mssg <- 'Distribution type must be one of the following:\n   Normal, Uniform, PERT, Triangular.' 
+            logmssg(mssg, logfile = logfn)
+            stop(mssg)
+          }
         }
       }
     } 
