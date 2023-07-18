@@ -19,7 +19,7 @@ dat.in$emis.dur <- as.numeric(settings['emis.dur'])
 dat.in$time.hr <- dat.in$emis.dur
 
 # Unique key
-dat.in$app.key.year <- paste(dat.in$app.key, dat.in$app.year)
+dat.in$app.key.yr <- paste(dat.in$app.key, dat.in$app.year)
 
 # Add manure composition
 dat.in <- merge(dat.in, comp, by = 'man.key')

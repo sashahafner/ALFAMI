@@ -51,7 +51,7 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
 
     # Calculate emission
     emis <- alfam2(dat.uc, pars = parsuc, app.name = 'tan.rate', time.name = 'time.hr', 
-                   time.incorp = 'incorp.time', prep = TRUE, group = 'app.key.year', warn = FALSE)
+                   time.incorp = 'incorp.time', prep = TRUE, group = 'app.key.yr', warn = FALSE)
   
     # Combine emission predictions with inputs for summarizing
     dd <- cbind(dat.uc, emis[, c('e', 'er')])

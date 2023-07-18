@@ -1,6 +1,6 @@
 # Check for input problems
 
-logfn <- paste0('../', dirs$logs, '/', settings$ofile, '.txt')
+logfn <- paste0('../', dirs$logs, '/', settings$ofile, '_log.txt')
 
 # Basic info
 logmssg('================================================================', logfile = logfn, append = FALSE)
@@ -19,15 +19,10 @@ logmssg(si, logfile = logfn, print.method = print, echo = FALSE)
 logmssg('R version info:\n', logfile = logfn, echo = FALSE)
 logmssg(sessionInfo(), logfile = logfn, print.method = print, echo = FALSE)
 
-sink('../logs/R_versions.txt')
-  print(sessionInfo())
-sink()
-
-
-logmssg(paste('Calculating emission for', length(unique(dat.in$app.key.year)), 'unique application events over', length(unique(dat.in$app.year)), 'years.\n'), logfile = logfn)
+logmssg(paste('Calculating emission for', length(unique(dat.in$app.key.yr)), 'unique application events over', length(unique(dat.in$app.year)), 'years.\n'), logfile = logfn)
 
 # Check for problems
-if (any(duplicated(dat.in$app.key.year))) {
+if (any(duplicated(dat.in$app.key.yr))) {
   mssg <- 'Duplicated application key x year combinations in application data.' 
   logmssg(mssg, logfile = logfn)
   stop(mssg)
@@ -39,5 +34,3 @@ if (any(!app$loc.key %in% locations$loc.key)) {
   stop(mssg)
 }
 
-
-logmssg(paste0('Using following parameter set: ', settings$parset, '\n'), logfile = logfn) 

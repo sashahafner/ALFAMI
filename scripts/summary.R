@@ -10,8 +10,16 @@ dat.final$emis.n <- dat.final$app.tan * dat.final$er
 
 # Summary by location, manure type, application date, month, states, . . .
 # Total. . .
-summ.year <- aggregate2(dat.final, c('app.tan', 'emis.n'), by = 'app.year', FUN = list(min = min, max = max, tot = sum, n = length))
-summ.year$ef <- summ.year$emis.n.tot / summ.year$app.tan.tot
+summ.yr <- aggregate2(dat.final, c('app.tan', 'emis.n'), by = 'app.year', FUN = list(min = min, max = max, tot = sum, n = length))
+summ.yr$ef <- summ.yr$emis.n.tot / summ.yr$app.tan.tot
+
+# Year and livestock type
+summ.yr.lv <- aggregate2(dat.final, c('app.tan', 'emis.n'), by = c('app.year', 'livestock.group'), FUN = list(min = min, max = max, tot = sum, n = length))
+summ.yr.lv$ef <- summ.yr.lv$emis.n.tot / summ.yr.lv$app.tan.tot
+
+# Year and aggregation group 1
+summ.yr.la1 <- aggregate2(dat.final, c('app.tan', 'emis.n'), by = c('app.year', 'loc.agg1'), FUN = list(min = min, max = max, tot = sum, n = length))
+summ.yr.la1$ef <- summ.yr.la1$emis.n.tot / summ.yr.la1$app.tan.tot
 
 # Uncertainty results ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # Get totals by year and livestock category *before* taking quantiles
@@ -31,19 +39,6 @@ summ.uc.yr <- aggregate2(summ2, c('app.man', 'app.tan', 'emis.n', 'ef'), c('app.
 summ.uc.yr.lv <- aggregate2(summ1, c('app.man', 'app.tan', 'emis.n', 'ef'), c('app.year', 'livestock.group'), 
                            FUN = list(lwr = function(x) quantile(x, (1 - cl) / 2), upr = function(x) quantile(x, 0.5 + cl / 2)))
 
-
 # Combined results ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-summ.year <- merge(summ.year, summ.yr.uc, by = 'app.year')
-# Get relative uncertainty
-summ.year$rlwr <- (summ.year$emis.n.tot - summ.year$emis.n.lwr) / summ.year$emis.n.tot
-summ.year$rupr <- (summ.year$emis.n.upr - summ.year$emis.n.tot) / summ.year$emis.n.tot
-
-# By location and year
-summ.loc.year <- aggregate2(dat.final, c('app.tan', 'emis.n'), by = c('loc.key', 'app.year'), FUN = list(min = min, max = max, tot = sum))
-summ.loc.year$ef <- summ.loc.year$emis.n.tot / summ.loc.year$app.tan.tot
-
-# By aggregation groups
-summ.agg1.year <- aggregate2(dat.final, c('app.tan', 'emis.n'), by = c('loc.agg1', 'app.year'), FUN = list(min = min, max = max, tot = sum))
-summ.agg1.year$ef <- summ.agg1.year$emis.n.tot / summ.agg1.year$app.tan.tot
-
-
+summ.yr <- merge(summ.yr, summ.uc.yr, by = 'app.year')
+summ.yr.lv <- merge(summ.yr.lv, summ.uc.yr.lv, by = c('app.year', 'livestock.group'))

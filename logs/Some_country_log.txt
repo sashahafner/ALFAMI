@@ -3,7 +3,7 @@ Running ALFAMI tool v0.2
 ================================================================
 See https://github.com/sashahafner/ALFAMI for latest version
 
-2023-07-18 09:07:15
+2023-07-18 10:35:51
 System info:
 
 [1] "sysname: Linux"                                      
@@ -37,7 +37,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] mc2d_0.2.0     mvtnorm_1.1-3  openxlsx_4.2.5 ALFAM2_3.6     nvimcom_0.9-82
+[1] mc2d_0.2.0     mvtnorm_1.1-3  openxlsx_4.2.5 ALFAM2_3.6    
 
 loaded via a namespace (and not attached):
  [1] zip_2.2.0        Rcpp_1.0.10      pillar_1.9.0     compiler_4.2.1  
@@ -55,23 +55,27 @@ Calculating emission for 12 unique application events over 3 years.
 
 Using following parameter set: ALFAM2pars03
 
+Parameter values:
+
+           int.f0            int.r1            int.r2            int.r3 
+     -0.048960345      -0.924051750      -1.611370705      -2.704997650 
+           int.r5    app.mthd.os.f0    app.mthd.cs.f0    app.mthd.bc.r1 
+     -1.763328945      -2.639517880      -8.420776513       0.656549401 
+   app.mthd.ts.r1    app.mthd.bc.r3    app.mthd.cs.r3         man.dm.f0 
+     -0.679703699       0.674950848      -0.274336357       0.375415036 
+        man.dm.r1    app.rate.ni.f0 man.source.pig.f0       air.temp.r1 
+     -0.167924288      -0.031966852      -1.478027496       0.085360483 
+       wind.2m.r1      rain.rate.r2      rain.rate.r5 incorp.shallow.f4 
+      0.352529794       0.548242007       0.478621491      -0.067073940 
+incorp.shallow.r3    incorp.deep.f4    incorp.deep.r3         man.ph.r1 
+     -0.570465536      -3.784358213      -2.913857878       0.971168218 
+        man.ph.r3   air.temp.ave.r3 
+      0.152790690       0.008112081 
+
 Starting 20 uncertainty iterations . . .
 *Not* including ALFAM2 model parameter uncertainty.
 With random number seed 123.
 Done
 
-Total time: 0.971 seconds.
+Total time: 1.99 seconds.
 See files in output directory for output, and logs directory for logs.
-Starting 20 uncertainty iterations . . .
-*Not* including ALFAM2 model parameter uncertainty.
-With random number seed 123.
-Done
-
-Starting 20 uncertainty iterations . . .
-*Not* including ALFAM2 model parameter uncertainty.
-With random number seed 123.
-Starting 20 uncertainty iterations . . .
-*Not* including ALFAM2 model parameter uncertainty.
-With random number seed 123.
-Done
-
