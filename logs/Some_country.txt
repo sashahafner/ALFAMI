@@ -3,7 +3,7 @@ Running ALFAMI tool v0.2
 ================================================================
 See https://github.com/sashahafner/ALFAMI for latest version
 
-2023-07-17 16:52:48
+2023-07-18 07:31:51
 System info:
 
 [1] "sysname: Linux"                                      
@@ -56,8 +56,9 @@ Calculating emission for 12 unique application events over 3 years.
 Using following parameter set: ALFAM2pars03
 
 Starting 100 uncertainty iterations . . .
-With random number seed 120178.
+*Not* including ALFAM2 model parameter uncertainty.
+With random number seed 123.
 Done
 
-Total time: 2.91 seconds.
+Total time: 3.16 seconds.
 See files in output directory for output, and logs directory for logs.

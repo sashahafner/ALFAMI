@@ -76,7 +76,7 @@ if (settings[['uncert']] == 'Yes' | settings[['paruncert']] == 'Yes') {
   uncert <- read.xlsx('../inputs/inputs.xlsx', 'Uncertainty', startRow = 1)
   uncert <- uncert[, c(-1:-2)]
   rownames(uncert) <- c('man.dm', 'man.ph', 'app.rate.ni', 'app.tan', 'incorp.time', 'air.temp', 'wind.2m')
-  colnames(uncert) <- c('rel', 'dist.type', 'sd', 'min', 'max', 'shape')
+  colnames(uncert) <- c('rel', 'dist.type', 'sd', 'min', 'max', 'cmin', 'cmax', 'shape')
 }
 
 # Units

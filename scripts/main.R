@@ -15,4 +15,6 @@ source('summary.R')
 source('export.R')
 source('end_timer.R')
 
-options(warn = 2)
+#undebug(genUnc)
+#debug(genUnc)
+#options(warn = 2)
