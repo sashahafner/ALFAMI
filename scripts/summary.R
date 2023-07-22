@@ -33,11 +33,11 @@ summ2$ef <- summ2$emis.n / summ2$app.tan
 # Now quantiles 
 # By year
 summ.uc.yr <- aggregate2(summ2, c('app.man', 'app.tan', 'emis.n', 'ef'), c('app.year'), 
-                         FUN = list(lwr = function(x) quantile(x, (1 - cl) / 2), upr = function(x) quantile(x, 0.5 + cl / 2)))
+                         FUN = list(lwr = function(x) quantile(x, (1 - cl) / 2, na.rm = TRUE), upr = function(x) quantile(x, 0.5 + cl / 2, na.rm = TRUE)))
 
 # By year and livestock category
 summ.uc.yr.lv <- aggregate2(summ1, c('app.man', 'app.tan', 'emis.n', 'ef'), c('app.year', 'livestock.group'), 
-                           FUN = list(lwr = function(x) quantile(x, (1 - cl) / 2), upr = function(x) quantile(x, 0.5 + cl / 2)))
+                           FUN = list(lwr = function(x) quantile(x, (1 - cl) / 2, na.rm = TRUE), upr = function(x) quantile(x, 0.5 + cl / 2, na.rm = TRUE)))
 
 # Combined results ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 summ.yr <- merge(summ.yr, summ.uc.yr, by = 'app.year')
