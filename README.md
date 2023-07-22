@@ -19,9 +19,7 @@ There are a few things that need to be done once.
 ## R
 The ALFAMI tool runs in R, but users do not need to so much as open R or look at an R script or function to use it.
 But users must have R installed of course.
-To install R, pick the closest site from [this list](https://cran.r-project.org/mirrors.html), then the appropriate download link 
-
-follow the instructions, double-click the downloaded exe file, and accept default options to install it.
+To install R, pick the closest site from [this list](https://cran.r-project.org/mirrors.html), then the appropriate download link, follow the instructions, double-click the downloaded exe file, and accept default options to install it.
 Pay attention to where R is installed, because you will need that path for the next step.
 
 ## Set the PATH Environment variable
