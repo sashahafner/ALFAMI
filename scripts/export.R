@@ -12,6 +12,7 @@ ndig <- settings[['ndig']]
 dat.final <- rounddf(dat.final, func = signif, digits = ndig)
 dat.out <- rounddf(dat.out, func = signif, digits = ndig)
 summ.yr <- rounddf(summ.yr, func = signif, digits = ndig)
+summ.yr.lv <- rounddf(summ.yr.lv, func = signif, digits = ndig)
 
 dat.final <- dat.final[, c('loc.key', 'loc.name', 'loc.agg1', 'loc.agg2', 'input.row.loc', 
                        'app.key', 'app.year', 'app.man', 'app.tan', 'app.area', 'app.rate', 'app.rate.ni', 'app.mthd', 'input.row.app',
