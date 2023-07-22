@@ -25,10 +25,11 @@ follow the instructions, double-click the downloaded exe file, and accept defaul
 Pay attention to where R is installed, because you will need that path for the next step.
 
 ## Set the PATH Environment variable
-To run ALFAMI from a batch file in Windows, you will need to add the path to the newly installed Rscript.exe executable file to an environment variable called PATH.
+To run R from a batch file in Windows, you will need to add the path to the newly installed Rscript.exe executable file to an environment variable called PATH.
 To do that, first find and copy the path to Rscript.exe, and then follow the steps below.
 
 1. Hit the Windows key and type environment. Select this option:
+![image](https://github.com/sashahafner/ALFAMI/assets/35272876/db4d2151-dd70-4e62-9887-8054e6b45d51)
 3. Under the "Advanced" tab select "Environment variables" from the lower right  :
 4. Click "Path" and then "Edit":
 5. Select "New", then paste the path to Rscript.exe in the appropriate field:
