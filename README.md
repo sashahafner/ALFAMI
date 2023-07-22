@@ -30,11 +30,12 @@ To do that, first find and copy the path to Rscript.exe, and then follow the ste
 
 1. Hit the Windows key and type environment. Select this option:
 ![image](https://github.com/sashahafner/ALFAMI/assets/35272876/db4d2151-dd70-4e62-9887-8054e6b45d51)
-3. Under the "Advanced" tab select "Environment variables" from the lower right  :
-4. Click "Path" and then "Edit":
+3. Under the "Advanced" tab select "Environment variables" from the lower right.
+4. Click "Path" and then "Edit".
 5. Select "New", then paste the path to Rscript.exe in the appropriate field:
-6. Click OK, OK, and again OK.
-7. Restart the computer.
+![image](https://github.com/sashahafner/ALFAMI/assets/35272876/c98f73ae-8f92-4bc5-b28e-1cc6f0b575b9)
+7. Click OK, OK, and again OK.
+8. Restart the computer.
 
 ## Install some R packages
 The ALFAMI tool requires some R packages.
