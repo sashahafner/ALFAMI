@@ -1,5 +1,10 @@
 # Prepare inputs for ALFAM2
 
+# Rain rate needs days in month
+daysinmonth <- daysInMonth(wthr$wthr.month)
+as.integer(daysinmonth)
+wthr$rain.rate <- wthr$rain.tot / daysinmonth / 24
+
 # Merge in weather data
 mergecols <- c('loc.key', 'wthr.year')
 morecols <- c('wthr.month', 'wthr.day') 
@@ -12,6 +17,8 @@ dat.in <- merge(dat.in, locations, by = 'loc.key')
 # Check change in size
 dim(app)
 dim(dat.in)
+class(dat.in)
+dat.in$rain.rate
 # NTS: warnings etc.
 
 # Add time

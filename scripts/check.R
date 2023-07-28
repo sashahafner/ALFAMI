@@ -4,7 +4,7 @@ logfn <- paste0('../', dirs$logs, '/', settings$ofile, '_log.txt')
 
 # Basic info
 logmssg('================================================================', logfile = logfn, append = FALSE)
-logmssg('Running ALFAMI tool v0.2', logfile = logfn)
+logmssg('Running ALFAMI tool v0.4', logfile = logfn)
 logmssg('================================================================', logfile = logfn)
 
 logmssg('See https://github.com/sashahafner/ALFAMI for latest version\n', logfile = logfn)
