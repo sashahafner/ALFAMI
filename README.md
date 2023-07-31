@@ -44,6 +44,7 @@ In case you are interested, this file calls R and installs:
 * devtools, needed for installion of the ALFAM2 package
 * ALFAM2, for the ALFAM2 model
 * openxlsx, for reading from the input file
+* mc2d, for distributions needed for uncertainty calculations
 
 Unfortunately, there are several things that could go wrong when trying to run this batch file.
 If it doesn't work (check the messages for errors), users will have to open R (look for the latest version of "R" under "Programs") and enter these three commands:
@@ -51,6 +52,7 @@ If it doesn't work (check the messages for errors), users will have to open R (l
 ```
 install.packages('devtools')
 install.packages('openxlsx')
+install.packages('mc2d')
 devtools::install_github('sashahafner/ALFAM2', ref = 'dev')
 ```
 
