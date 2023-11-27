@@ -1,0 +1,4 @@
+"Application year","# TAN applications","# NH3-N emissions","Min. applied TAN","Max. applied TAN","Total applied TAN","Min. NH3-N emission","Max. NH3-N emission","Total NH3-N emission","Effective emission factor","Lower total NH3-N emission","Upper total NH3-N emission","Lower total TAN application","Upper total TAN application","Lower effective emission factor","Upper effective emission factor"
+2019,4,4,350,3520,5830,86.58,498.5,957.1,0.1642,888.8,1192,5219,6538,0.1515,0.2021
+2020,4,4,420,3300,5910,99.24,262.2,730,0.1235,684.4,932.2,5291,6627,0.1266,0.1428
+2021,4,4,350,3520,5830,65.9,277.1,558.5,0.09579,508.9,664.9,5219,6538,0.09434,0.107

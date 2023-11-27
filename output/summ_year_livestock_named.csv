@@ -1,0 +1,7 @@
+"Livestock category","Application year","# TAN applications","# NH3-N emissions","Min. applied TAN","Max. applied TAN","Total applied TAN","Min. NH3-N emission","Max. NH3-N emission","Total NH3-N emission","Effective emission factor","Lower total NH3-N emission","Upper total NH3-N emission","Lower total TAN application","Upper total TAN application","Lower effective emission factor","Upper effective emission factor"
+"Dairy cattle",2019,2,2,350,720,1070,86.58,243,329.6,0.3081,258.4,411.2,957.9,1200,0.2547,0.3732
+"Swine (finishing pigs)",2019,2,2,1240,3520,4760,129,498.5,627.5,0.1318,581.6,801.5,4261,5338,0.1227,0.1632
+"Dairy cattle",2020,2,2,420,1000,1420,99.24,254.3,353.6,0.249,329.6,492.1,1271,1592,0.2546,0.3282
+"Swine (finishing pigs)",2020,2,2,1190,3300,4490,114.2,262.2,376.4,0.08383,338.5,436.7,4020,5035,0.07582,0.09466
+"Dairy cattle",2021,2,2,350,720,1070,86.58,128.9,215.5,0.2014,198.5,257.7,957.9,1200,0.1873,0.2302
+"Swine (finishing pigs)",2021,2,2,1240,3520,4760,65.9,277.1,343,0.07206,295.8,421,4261,5338,0.06804,0.08431
