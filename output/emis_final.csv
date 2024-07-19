@@ -1,13 +1,13 @@
 "loc.key","loc.name","loc.agg1","loc.agg2","input.row.loc","app.key","app.year","app.man","app.tan","app.area","app.rate","app.rate.ni","app.mthd","input.row.app","man.key","man.source","man.dm","man.tan","man.ph","wthr.year","wthr.month","wthr.day","air.temp","air.temp.ave","wind.2m","rain.rate","wthr.file","e","er"
-1000,"Bigone","North",NA,1,"Cattle spring",2019,116700,350,NA,30,30,"Trailing hose",1,"Cattle 2010s","Cattle",7,3,7,2019,4,NA,7.6,7.6,3,0,"1000.csv",22.26,0.2474
-1000,"Bigone","North",NA,1,"Cattle summer grass",2019,240000,720,NA,30,30,"Broadcast",2,"Cattle 2010s","Cattle",7,3,7,2019,6,NA,14.3,14.3,2.9,0,"1000.csv",30.38,0.3376
-1000,"Bigone","North",NA,1,"Pig fall",2019,310000,1240,NA,30,0,"Open slot injection",3,"Pig 2010s","Pig",5,4,7.1,2019,9,NA,13.7,13.7,2.9,0,"1000.csv",12.48,0.104
-1001,"Smallone","North",NA,2,"Pig spring",2019,880000,3520,NA,30,30,"Trailing hose",4,"Pig special","Pig",3,4,7.4,2019,5,NA,11.6,11.6,2.9,0,"1001.csv",16.99,0.1416
-1000,"Bigone","North",NA,1,"Cattle spring",2020,120000,420,NA,30,30,"Trailing hose",5,"Cattle 2020s","Cattle",6,3.5,7,2020,4,NA,7.6,7.6,3.4,0,"1000.csv",24.81,0.2363
-1000,"Bigone","North",NA,1,"Cattle summer grass",2020,285700,1000,NA,30,30,"Broadcast",6,"Cattle 2020s","Cattle",6,3.5,7,2020,6,NA,14.6,14.6,2.9,0,"1000.csv",26.71,0.2543
-1000,"Bigone","North",NA,1,"Pig fall",2020,264400,1190,NA,30,0,"Open slot injection",7,"Pig 2020s","Pig",4,4.5,7.1,2020,9,NA,13.7,13.7,3,0,"1000.csv",12.96,0.09598
-1001,"Smallone","North",NA,2,"Pig spring",2020,825000,3300,NA,30,30,"Trailing hose",8,"Pig acidified 2020","Pig",3,4,6,2020,5,NA,11.5,11.5,3.1,0,"1001.csv",9.534,0.07945
-1000,"Bigone","North",NA,1,"Cattle spring",2021,116700,350,NA,30,30,"Trailing hose",9,"Cattle 2010s","Cattle",7,3,7,2019,4,NA,7.6,7.6,3,0,"1000.csv",22.26,0.2474
-1000,"Bigone","North",NA,1,"Cattle summer grass",2021,240000,720,NA,30,30,"Broadcast",10,"Cattle 2010s","Cattle",7,3,7,2019,6,NA,14.3,14.3,2.9,0,"1000.csv",16.11,0.179
-1000,"Bigone","North",NA,1,"Pig fall",2021,310000,1240,NA,30,0,"Open slot injection",11,"Pig acidified 2020","Pig",3,4,6,2019,9,NA,13.7,13.7,2.9,0,"1000.csv",6.378,0.05315
-1001,"Smallone","North",NA,2,"Pig spring",2021,880000,3520,NA,30,30,"Trailing hose",12,"Pig acidified 2020","Pig",3,4,6,2019,5,NA,11.6,11.6,2.9,0,"1001.csv",9.446,0.07872
+1000,"Bigone","North",NA,1,"Cattle spring",2019,116700,350,NA,30,30,"Trailing hose",1,"Cattle 2010s","Cattle",7,3,7,2019,4,NA,7.6,7.6,3,0,"1000.csv",18.46,0.2051
+1000,"Bigone","North",NA,1,"Cattle summer grass",2019,240000,720,NA,30,30,"Broadcast",2,"Cattle 2010s","Cattle",7,3,7,2019,6,NA,14.3,14.3,2.9,0,"1000.csv",31.24,0.3471
+1000,"Bigone","North",NA,1,"Pig fall",2019,310000,1240,NA,30,0,"Open slot injection",3,"Pig 2010s","Pig",5,4,7.1,2019,9,NA,13.7,13.7,2.9,0,"1000.csv",12.62,0.1052
+1001,"Smallone","North",NA,2,"Pig spring",2019,880000,3520,NA,30,30,"Trailing hose",4,"Pig special","Pig",3,4,7.4,2019,5,NA,11.6,11.6,2.9,0,"1001.csv",17.1,0.1425
+1000,"Bigone","North",NA,1,"Cattle spring",2020,120000,420,NA,30,30,"Trailing hose",5,"Cattle 2020s","Cattle",6,3.5,7,2020,4,NA,7.6,7.6,3.4,0,"1000.csv",20.36,0.1939
+1000,"Bigone","North",NA,1,"Cattle summer grass",2020,285700,1000,NA,30,30,"Broadcast",6,"Cattle 2020s","Cattle",6,3.5,7,2020,6,NA,14.6,14.6,2.9,0,"1000.csv",27.32,0.2601
+1000,"Bigone","North",NA,1,"Pig fall",2020,264400,1190,NA,30,0,"Open slot injection",7,"Pig 2020s","Pig",4,4.5,7.1,2020,9,NA,13.7,13.7,3,0,"1000.csv",13.94,0.1032
+1001,"Smallone","North",NA,2,"Pig spring",2020,825000,3300,NA,30,30,"Trailing hose",8,"Pig acidified 2020","Pig",3,4,6,2020,5,NA,11.5,11.5,3.1,0,"1001.csv",12.57,0.1047
+1000,"Bigone","North",NA,1,"Cattle spring",2021,116700,350,NA,30,30,"Trailing hose",9,"Cattle 2010s","Cattle",7,3,7,2019,4,NA,7.6,7.6,3,0,"1000.csv",18.46,0.2051
+1000,"Bigone","North",NA,1,"Cattle summer grass",2021,240000,720,NA,30,30,"Broadcast",10,"Cattle 2010s","Cattle",7,3,7,2019,6,NA,14.3,14.3,2.9,0,"1000.csv",17.65,0.1961
+1000,"Bigone","North",NA,1,"Pig fall",2021,310000,1240,NA,30,0,"Open slot injection",11,"Pig acidified 2020","Pig",3,4,6,2019,9,NA,13.7,13.7,2.9,0,"1000.csv",11.13,0.09276
+1001,"Smallone","North",NA,2,"Pig spring",2021,880000,3520,NA,30,30,"Trailing hose",12,"Pig acidified 2020","Pig",3,4,6,2019,5,NA,11.6,11.6,2.9,0,"1001.csv",12.58,0.1048

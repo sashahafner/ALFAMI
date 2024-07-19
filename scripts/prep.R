@@ -2,7 +2,6 @@
 
 # Rain rate needs days in month
 daysinmonth <- daysInMonth(wthr$wthr.month)
-as.integer(daysinmonth)
 wthr$rain.rate <- wthr$rain.tot / daysinmonth / 24
 
 # Merge in weather data

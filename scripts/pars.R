@@ -8,7 +8,7 @@ if (grepl('03', settings[['parset']])) {
   parsvar <- ALFAM2::alfam2pars03var 
 } else {
   if (settings[['paruncert']] == 'Yes') {
-    logmssg('Warning: Parameter uncertainty is only available for ALFAM2pars03, so skipping it.', logfile = logfn)
+    logmssg('Warning: Parameter uncertainty is only available for alfam2pars03, so skipping it.', logfile = logfn)
     settings[['paruncert']] <- 'No'
   }
 }

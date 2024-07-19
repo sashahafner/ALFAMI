@@ -3,12 +3,12 @@ Running ALFAMI tool v0.4
 ================================================================
 See https://github.com/sashahafner/ALFAMI for latest version
 
-2024-01-03 15:27:08
+2024-07-19 15:30:39.628572
 System info:
 
 [1] "sysname: Linux"                                       
-[2] "release: 5.15.0-91-generic"                           
-[3] "version: #101-Ubuntu SMP Tue Nov 14 13:30:08 UTC 2023"
+[2] "release: 5.15.0-113-generic"                          
+[3] "version: #123-Ubuntu SMP Mon Jun 10 08:16:17 UTC 2024"
 [4] "nodename: sasha-OptiPlex-3010"                        
 [5] "machine: x86_64"                                      
 [6] "login: sasha"                                         
@@ -17,12 +17,12 @@ System info:
 
 R version info:
 
-R version 4.2.1 (2022-06-23)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 22.04.3 LTS
+R version 4.4.0 (2024-04-24)
+Platform: x86_64-pc-linux-gnu
+Running under: Ubuntu 22.04.4 LTS
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
 LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
 
 locale:
@@ -33,25 +33,51 @@ locale:
  [9] LC_ADDRESS=C               LC_TELEPHONE=C            
 [11] LC_MEASUREMENT=en_US.UTF-8 LC_IDENTIFICATION=C       
 
+time zone: America/New_York
+tzcode source: system (glibc)
+
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] mc2d_0.2.0     mvtnorm_1.1-3  openxlsx_4.2.5 ALFAM2_3.21    nvimcom_0.9-82
+[1] mc2d_0.2.1       mvtnorm_1.2-5    openxlsx_4.2.5.2 ALFAM2_4.1.5    
+[5] nvimcom_0.9.37  
 
 loaded via a namespace (and not attached):
- [1] zip_2.2.0        Rcpp_1.0.11      pillar_1.9.0     compiler_4.2.1  
- [5] ggpubr_0.4.0     tools_4.2.1      lifecycle_1.0.3  tibble_3.2.1    
- [9] gtable_0.3.0     pkgconfig_2.0.3  rlang_1.1.1      cli_3.6.1       
-[13] DBI_1.1.3        parallel_4.2.1   dplyr_1.0.9      generics_0.1.3  
-[17] vctrs_0.5.1      grid_4.2.1       tidyselect_1.1.2 glue_1.6.2      
-[21] R6_2.5.1         rstatix_0.7.0    fansi_1.0.3      carData_3.0-5   
-[25] car_3.1-0        tidyr_1.2.0      ggplot2_3.4.3    purrr_0.3.4     
-[29] magrittr_2.0.3   backports_1.4.1  scales_1.2.0     abind_1.4-5     
-[33] assertthat_0.2.1 colorspace_2.0-3 ggsignif_0.6.3   utf8_1.2.2      
-[37] stringi_1.7.6    munsell_0.5.0    broom_1.0.1     
+ [1] vctrs_0.6.5      zip_2.3.1        cli_3.6.2        rlang_1.1.3     
+ [5] stringi_1.8.3    purrr_1.0.2      car_3.1-2        generics_0.1.3  
+ [9] ggpubr_0.6.0     glue_1.7.0       backports_1.4.1  colorspace_2.1-0
+[13] scales_1.3.0     fansi_1.0.6      grid_4.4.0       abind_1.4-5     
+[17] carData_3.0-5    rstatix_0.7.2    munsell_0.5.1    tibble_3.2.1    
+[21] lifecycle_1.0.4  colorout_1.3-0.2 ggsignif_0.6.4   compiler_4.4.0  
+[25] dplyr_1.1.4      Rcpp_1.0.12      pkgconfig_2.0.3  tidyr_1.3.1     
+[29] R6_2.5.1         tidyselect_1.2.1 utf8_1.2.4       pillar_1.9.0    
+[33] magrittr_2.0.3   tools_4.4.0      gtable_0.3.5     broom_1.0.5     
+[37] ggplot2_3.5.1   
 
 Calculating emission for 12 unique application events over 3 years.
 
-Using following parameter set: ALFAM2pars03
+Using following parameter set: alfam2pars03
 
+Parameter values:
+
+           int.f0    app.mthd.os.f0    app.mthd.cs.f0 man.source.pig.f0 
+       0.43613933       -2.93492578       -7.80196997       -0.85171386 
+        man.dm.f0            int.r1    app.mthd.bc.r1    app.mthd.ts.r1 
+       0.49659337       -1.46760800        0.71991146       -0.09333684 
+        man.dm.r1         man.ph.r1       air.temp.r1      wind.sqrt.r1 
+      -0.02843126        0.44886708        0.03454900        0.46628989 
+           int.r2      rain.rate.r2            int.r3    app.mthd.cs.r3 
+      -1.20493824        0.62051420       -2.71593590       -0.34883867 
+   incorp.deep.r3         man.ph.r3 incorp.shallow.f4    incorp.deep.f4 
+      -1.96259695        0.03557064       -1.37979544       -3.26822034 
+           int.r5      rain.rate.r5 
+      -1.80000000        0.34944126 
+
+Starting 100 uncertainty iterations . . .
+Including ALFAM2 model parameter uncertainty.
+With random number seed 123.
+Done
+
+Total time: 2.83 seconds.
+See files in output directory for output, and logs directory for logs.
