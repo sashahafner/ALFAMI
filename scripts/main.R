@@ -9,6 +9,8 @@ source('inputs.R')
 source('prep.R')
 source('check.R')
 source('pars.R')
+source('emis.R')
+
 source('run_ALFAM2.R')
 source('uncert.R')
 source('summary.R')
